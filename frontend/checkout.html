@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moda Urbana | Pago</title>
+  <meta name="description" content="Finaliza tu compra con tarjeta o con datos de envío en Moda Urbana." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="pagina">
+  <header class="header">
+    <a class="header__marca" href="index.html">Moda Urbana</a>
+    <nav class="header__navegacion" aria-label="Navegación principal">
+      <a class="header__enlace" href="index.html#coleccion">Colección</a>
+      <a class="header__enlace" href="index.html#ofertas">Ofertas</a>
+      <a class="header__enlace" href="index.html#contacto">Contacto</a>
+    </nav>
+    <div class="header__acciones">
+      <button class="boton boton--secundario header__boton" id="openCartButton" type="button">Carrito (0)</button>
+      <button class="boton boton--secundario header__boton" id="temaToggle" type="button">Modo oscuro</button>
+    </div>
+  </header>
+
+  <main class="checkout" id="checkoutPage">
+    <div class="seccion__cabecera">
+      <p class="seccion__prefacio">Pago seguro</p>
+      <h1 class="seccion__titulo">Finaliza tu compra</h1>
+      <p class="seccion__texto">Revisa tu pedido y completa los datos para procesar el pago en línea.</p>
+    </div>
+
+    <div class="checkout__grid">
+      <section class="checkout__panel">
+        <h2 class="checkout__heading">Resumen del pedido</h2>
+        <div class="checkout__items" id="checkoutItems"></div>
+        <div class="checkout__total">
+          <span>Total</span>
+          <strong id="checkoutTotal">$0</strong>
+        </div>
+      </section>
+
+      <section class="checkout__panel">
+        <h2 class="checkout__heading">Datos de pago</h2>
+        <form class="formulario payment-form" id="checkoutForm" novalidate>
+          <div class="formulario__grupo">
+            <label class="formulario__label" for="paymentName">Nombre completo</label>
+            <input class="formulario__control" id="paymentName" name="name" type="text" autocomplete="name" required aria-required="true" />
+            <span class="formulario__feedback"></span>
+          </div>
+          <div class="formulario__grupo">
+            <label class="formulario__label" for="paymentEmail">Correo electrónico</label>
+            <input class="formulario__control" id="paymentEmail" name="email" type="email" autocomplete="email" required aria-required="true" />
+            <span class="formulario__feedback"></span>
+          </div>
+          <div class="formulario__grupo">
+            <label class="formulario__label" for="paymentAddress">Dirección de envío</label>
+            <input class="formulario__control" id="paymentAddress" name="address" type="text" autocomplete="street-address" required aria-required="true" />
+            <span class="formulario__feedback"></span>
+          </div>
+          <div class="formulario__grupo">
+            <label class="formulario__label" for="paymentCard">Número de tarjeta</label>
+            <input class="formulario__control" id="paymentCard" name="card" type="text" inputmode="numeric" placeholder="0000 0000 0000 0000" required aria-required="true" />
+            <span class="formulario__feedback"></span>
+          </div>
+          <div class="formulario__grupo">
+            <label class="formulario__label" for="paymentExpiry">Fecha de vencimiento</label>
+            <input class="formulario__control" id="paymentExpiry" name="expiry" type="text" inputmode="numeric" placeholder="MM/AA" required aria-required="true" />
+            <span class="formulario__feedback"></span>
+          </div>
+          <div class="formulario__grupo">
+            <label class="formulario__label" for="paymentCvc">CVC</label>
+            <input class="formulario__control" id="paymentCvc" name="cvc" type="text" inputmode="numeric" placeholder="123" required aria-required="true" />
+            <span class="formulario__feedback"></span>
+          </div>
+          <button class="boton boton--principal formulario__boton" type="submit">Pagar ahora</button>
+          <p class="formulario__mensaje" id="checkoutMessage"></p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <section class="carrito carrito--oculto" id="cartPanel" aria-label="Carrito de compras">
+    <div class="carrito__header">
+      <div>
+        <h2 class="carrito__titulo">Tu carrito</h2>
+        <p class="carrito__texto">Revisa tus artículos antes de finalizar.</p>
+      </div>
+      <button class="boton boton--secundario carrito__cerrar" id="cartCloseButton" type="button" aria-label="Cerrar carrito">X</button>
+    </div>
+    <div class="carrito__body">
+      <div class="carrito__items" id="cartItems"></div>
+      <p class="carrito__vacio" id="cartEmptyText">No hay productos en el carrito.</p>
+    </div>
+    <div class="carrito__footer">
+      <div class="carrito__total-row">
+        <span>Total</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <button class="boton boton--principal carrito__comprar" type="button">Ir al pago</button>
+    </div>
+  </section>
+
+  <div class="toast" id="toastMessage" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div class="cookie-banner" id="bannerCookies" role="dialog" aria-live="polite">
+    <p class="cookie-banner__texto">Usamos cookies para mejorar tu experiencia y recordar tu tema preferido.</p>
+    <button class="boton boton--principal cookie-banner__boton" id="acceptCookiesButton" type="button">Aceptar configuración</button>
+  </div>
+  <footer class="footer">
+    <p class="footer__texto">Moda Urbana · Envío rápido · Selección por talle y color</p>
+    <a class="footer__enlace" href="terms.html">Términos y Condiciones</a>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

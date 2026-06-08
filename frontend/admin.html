@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de administración | Moda Urbana</title>
+  <meta name="description" content="Panel administrativo de la tienda de ropa. Revisa leads, roles de usuario y estadísticas en tiempo real." />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="admin.js" defer></script>
+</head>
+<body class="pagina pagina--admin">
+  <header class="header">
+    <div class="header__marca">Moda Urbana</div>
+    <nav class="header__navegacion">
+      <a class="header__enlace" href="index.html">Tienda</a>
+      <a class="header__enlace" href="terms.html">Términos</a>
+    </nav>
+  </header>
+  <main class="admin">
+    <section class="admin__inicio" id="adminLoginSection">
+      <div class="seccion__cabecera">
+        <p class="seccion__prefacio">Acceso seguro</p>
+        <h1 class="seccion__titulo">Iniciar sesión como administrador</h1>
+        <p class="seccion__texto">Solo los usuarios con rol Administrador pueden ver el panel.</p>
+      </div>
+      <form class="formulario" id="adminLoginForm" novalidate>
+        <div class="formulario__grupo">
+          <label class="formulario__label" for="adminUsername">Usuario</label>
+          <input class="formulario__control" id="adminUsername" name="username" type="text" required />
+          <span class="formulario__feedback" id="adminUsernameFeedback"></span>
+        </div>
+        <div class="formulario__grupo">
+          <label class="formulario__label" for="adminPassword">Contraseña</label>
+          <input class="formulario__control" id="adminPassword" name="password" type="password" required />
+          <span class="formulario__feedback" id="adminPasswordFeedback"></span>
+        </div>
+        <button class="boton boton--principal" type="submit">Ingresar</button>
+        <p class="formulario__mensaje" id="adminLoginError"></p>
+      </form>
+    </section>
+
+    <section class="admin__dashboard admin__panel oculto" id="adminDashboard">
+      <div class="admin__cabecera">
+        <div>
+          <p class="seccion__prefacio">Panel de administración</p>
+          <h2 class="seccion__titulo">Estadísticas de la tienda</h2>
+        </div>
+        <button class="boton boton--secundario" id="adminLogoutButton" type="button">Cerrar sesión</button>
+      </div>
+      <div class="admin__indicadores">
+        <article class="indicador">
+          <p class="indicador__titulo">Mensajes recibidos</p>
+          <p class="indicador__valor" id="leadsCount">0</p>
+        </article>
+        <article class="indicador">
+          <p class="indicador__titulo">Prendas activas</p>
+          <p class="indicador__valor" id="productsCount">0</p>
+        </article>
+      </div>
+      <div class="admin__grafico">
+        <canvas id="mensajesGrafico" aria-label="Gráfico de mensajes por día" role="img"></canvas>
+      </div>
+      <section class="admin__productos" id="adminProductsSection">
+        <h3 class="seccion__titulo">Editar productos</h3>
+        <div class="admin__productos-grid" id="adminProductsList"></div>
+      </section>
+      <section class="admin__leads" id="adminLeadsSection">
+        <h3 class="seccion__titulo">Últimos mensajes</h3>
+        <div class="tabla" id="leadsTable"></div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

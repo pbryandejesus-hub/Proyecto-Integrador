@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moda Urbana | Tienda de ropa</title>
+  <meta name="description" content="Compra ropa urbana con selección de talles cerrados, ofertas exclusivas y atención al cliente rápida. Compra hoy y recibe tu look en tiempo récord." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="pagina">
+  <header class="header">
+    <a class="header__marca" href="#inicio">Moda Urbana</a>
+    <nav class="header__navegacion" aria-label="Navegación principal">
+      <a class="header__enlace" href="#coleccion">Colección</a>
+      <a class="header__enlace" href="#ofertas">Ofertas</a>
+      <a class="header__enlace" href="#contacto">Contacto</a>
+    </nav>
+    <div class="header__acciones">
+      <button class="boton boton--secundario header__boton" id="openCartButton" type="button">Carrito (0)</button>
+      <button class="boton boton--secundario header__boton" id="temaToggle" type="button">Modo oscuro</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero__texto">
+        <span class="hero__tag">Nueva colección</span>
+        <h1 class="hero__titulo">Moda urbana para cada día.</h1>
+        <p class="hero__descripcion">Talles cerrados, colores seleccionados y ofertas que destacan. Compra rápido y sin errores gracias a nuestro diseño pensado para clientes que quieren claridad.</p>
+        <a class="boton boton--principal hero__accion" href="#coleccion">Ver colección</a>
+      </div>
+      <figure class="hero__imagen-contenedor">
+        <img class="hero__imagen" src="assets/images/productos/remera_01.webp" alt="Modelo con remera terracota y look urbano" />
+      </figure>
+    </section>
+
+    <section class="coleccion" id="coleccion">
+      <div class="seccion__cabecera">
+        <p class="seccion__prefacio">Ofertas</p>
+        <h2 class="seccion__titulo">Colección destacada</h2>
+        <p class="seccion__texto">Explora prendas con formatos fáciles de elegir y descripciones claras para que compres sin dudas.</p>
+      </div>
+      <div class="coleccion__grid" id="catalogoProductos"></div>
+    </section>
+
+    <section class="destacado" id="ofertas">
+      <div class="destacado__contenedor">
+        <h2 class="destacado__titulo">Compra con seguridad</h2>
+        <p class="destacado__texto">Selecciona talles S, M o L y colores cerrados. Nuestra tienda evita errores con selectores claros y botones accesibles.</p>
+      </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+      <div class="seccion__cabecera">
+        <p class="seccion__prefacio">Consulta</p>
+        <h2 class="seccion__titulo">¿Necesitas ayuda?</h2>
+        <p class="seccion__texto">Escríbenos sobre cambios, devoluciones o disponibilidad. Respondemos en menos de 24 horas.</p>
+      </div>
+      <form class="formulario" id="formContacto" novalidate>
+        <div class="formulario__grupo">
+          <label class="formulario__label" for="contactName">Nombre completo</label>
+          <input class="formulario__control" id="contactName" name="name" type="text" autocomplete="name" required aria-required="true" />
+          <span class="formulario__feedback"></span>
+        </div>
+        <div class="formulario__grupo">
+          <label class="formulario__label" for="contactEmail">Correo electrónico</label>
+          <input class="formulario__control" id="contactEmail" name="email" type="email" autocomplete="email" required aria-required="true" />
+          <span class="formulario__feedback"></span>
+        </div>
+        <div class="formulario__grupo">
+          <label class="formulario__label" for="contactMessage">Mensaje</label>
+          <textarea class="formulario__control" id="contactMessage" name="message" rows="4" required aria-required="true"></textarea>
+          <span class="formulario__feedback"></span>
+        </div>
+        <button class="boton boton--principal formulario__boton" type="submit">Enviar consulta</button>
+        <p class="formulario__mensaje" id="contactResponse"></p>
+      </form>
+    </section>
+  </main>
+
+  <section class="carrito carrito--oculto" id="cartPanel" aria-label="Carrito de compras">
+    <div class="carrito__header">
+      <div>
+        <h2 class="carrito__titulo">Tu carrito</h2>
+        <p class="carrito__texto">Revisa tus artículos antes de finalizar.</p>
+      </div>
+      <button class="boton boton--secundario carrito__cerrar" id="cartCloseButton" type="button" aria-label="Cerrar carrito">X</button>
+    </div>
+    <div class="carrito__body">
+      <div class="carrito__items" id="cartItems"></div>
+      <p class="carrito__vacio" id="cartEmptyText">No hay productos en el carrito.</p>
+    </div>
+    <div class="carrito__footer">
+      <div class="carrito__total-row">
+        <span>Total</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <button class="boton boton--principal carrito__comprar" type="button">Ir al pago</button>
+    </div>
+  </section>
+
+  <div class="toast" id="toastMessage" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <div class="cookie-banner" id="bannerCookies" role="dialog" aria-live="polite">
+    <p class="cookie-banner__texto">Usamos cookies para mejorar tu experiencia y recordar tu tema preferido.</p>
+    <button class="boton boton--principal cookie-banner__boton" id="acceptCookiesButton" type="button">Aceptar configuración</button>
+  </div>
+
+  <footer class="footer">
+    <p class="footer__texto">Moda Urbana · Envío rápido · Selección por talle y color</p>
+    <a class="footer__enlace" href="terms.html">Términos y Condiciones</a>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
