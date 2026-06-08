@@ -68,14 +68,4 @@ La documentación interactiva de la API está disponible en `/docs` cuando el se
 - CORS: Configurado para permitir el desarrollo local.
 - Admin: Panel con Chart.js consumiendo datos del backend.
 - Legal: Banner de cookies y enlace a `terms.html` incluido.
-
-## Pasos sugeridos para la demostración (defensa)
-
-1. Arrancar backend con `uvicorn`.
-2. Abrir `frontend/index.html` y mostrar UX: selección de talle/color, validaciones y carrito.
-3. Enviar formulario de contacto y verificar que aparece en `admin.html`.
-4. Iniciar sesión como `admin` en `admin.html` y mostrar estadísticas y gráfico.
-
----
-
-Si quieres, puedo crear también un repositorio en GitHub y empujar los cambios (necesitaré acceso o instrucciones).
+- 
