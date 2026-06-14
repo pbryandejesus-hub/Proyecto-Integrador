@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f7f2eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ede7dd;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bgGrad4)"/>
+  
+  <!-- Hoodie body -->
+  <path d="M 120 100 Q 115 120 115 160 L 285 160 Q 285 120 280 100 Z" fill="#2c2825" stroke="#1a1a18" stroke-width="2" rx="20"/>
+  
+  <!-- Hoodie sleeves -->
+  <ellipse cx="80" cy="140" rx="40" ry="70" fill="#2c2825" stroke="#1a1a18" stroke-width="2"/>
+  <ellipse cx="320" cy="140" rx="40" ry="70" fill="#2c2825" stroke="#1a1a18" stroke-width="2"/>
+  
+  <!-- Kangaroo pocket -->
+  <rect x="155" y="185" width="90" height="50" fill="rgba(0,0,0,0.2)" stroke="rgba(0,0,0,0.3)" stroke-width="1" rx="10"/>
+  
+  <!-- Drawstring -->
+  <line x1="175" y1="110" x2="225" y2="110" stroke="#8B7355" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Hood -->
+  <ellipse cx="200" cy="85" rx="70" ry="50" fill="#2c2825" stroke="#1a1a18" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Body -->
+  <path d="M 130 160 L 130 270 L 145 270 L 145 160 Z" fill="#1a1a18" stroke="none"/>
+  <path d="M 255 160 L 255 270 L 270 270 L 270 160 Z" fill="#1a1a18" stroke="none"/>
+  
+  <!-- Figure silhouette -->
+  <circle cx="200" cy="45" r="18" fill="#2b2825" opacity="0.6"/>
+  
+  <!-- Shadow -->
+  <ellipse cx="200" cy="280" rx="135" ry="12" fill="rgba(43,40,37,0.1)"/>
+</svg>

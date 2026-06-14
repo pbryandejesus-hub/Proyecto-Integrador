@@ -1,4 +1,4 @@
-const ADMIN_API = "http://localhost:8000/api";
+const ADMIN_API = window.location.protocol === "file:" ? "http://localhost:8000/api" : "/api";
 const adminLoginForm = document.getElementById("adminLoginForm");
 const adminLoginSection = document.getElementById("adminLoginSection");
 const adminDashboard = document.getElementById("adminDashboard");

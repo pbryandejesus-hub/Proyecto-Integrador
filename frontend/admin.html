@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Panel de administración | Moda Urbana</title>
-  <meta name="description" content="Panel administrativo de la tienda de ropa. Revisa leads, roles de usuario y estadísticas en tiempo real." />
+  <meta name="description"
+    content="Panel administrativo de la tienda de ropa. Revisa leads, roles de usuario y estadísticas en tiempo real." />
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
   <script src="admin.js" defer></script>
 </head>
+
 <body class="pagina pagina--admin">
   <header class="header">
     <div class="header__marca">Moda Urbana</div>
@@ -63,13 +66,16 @@
       </div>
       <section class="admin__productos" id="adminProductsSection">
         <h3 class="seccion__titulo">Editar productos</h3>
+        <p class="admin__nota">Actualiza la información y sube nuevas imágenes para tus productos.</p>
         <div class="admin__productos-grid" id="adminProductsList"></div>
       </section>
       <section class="admin__leads" id="adminLeadsSection">
         <h3 class="seccion__titulo">Últimos mensajes</h3>
+        <p class="admin__nota">Contactos y consultas de clientes.</p>
         <div class="tabla" id="leadsTable"></div>
       </section>
     </section>
   </main>
 </body>
+
 </html>

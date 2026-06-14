@@ -6,6 +6,7 @@ import shutil
 
 from fastapi import Depends, FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 
 from .database import Base, SessionLocal, engine
@@ -47,7 +48,8 @@ def hash_password(password: str) -> str:
     return hashlib.sha256(password.encode("utf-8")).hexdigest()
 
 
-IMAGES_DIR = Path(__file__).resolve().parent.parent / "frontend" / "assets" / "images" / "productos"
+FRONTEND_DIR = Path(__file__).resolve().parent.parent / "frontend"
+IMAGES_DIR = FRONTEND_DIR / "assets" / "images" / "productos"
 IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 
 
@@ -272,3 +274,7 @@ def upload_product_image(
 @app.post("/api/analytics")
 def analytics(payload: AnalyticsPayload) -> Dict[str, str]:
     return {"status": "ok", "event": payload.event}
+
+
+app.mount("/frontend", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")
+app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="site")

@@ -542,6 +542,147 @@ textarea {
   text-decoration: none;
 }
 
+/* Secciones de beneficios y testimonios */
+.beneficios {
+  padding: 3rem 2rem;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.beneficios__grid {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.beneficio {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.beneficio:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px var(--color-shadow);
+}
+
+.beneficio__icono {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.beneficio__titulo {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.beneficio__texto {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.testimonios {
+  padding: 3rem 2rem;
+  background: var(--color-bg);
+}
+
+.testimonios__grid {
+  display: grid;
+  gap: 1.75rem;
+  padding: 2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.testimonio {
+  background: var(--color-surface);
+  padding: 1.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 20px var(--color-shadow);
+  transition: transform 0.3s ease;
+}
+
+.testimonio:hover {
+  transform: translateY(-3px);
+}
+
+.testimonio__estrellas {
+  color: var(--color-accent);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.testimonio__texto {
+  margin: 1rem 0;
+  color: var(--color-text);
+  font-style: italic;
+}
+
+.testimonio__autor {
+  margin: 0;
+  color: var(--color-muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.prenda {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.beneficio {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.testimonio {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Mejoras de responsividad */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .header__navegacion {
+    justify-content: center;
+  }
+
+  .coleccion__grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem 2rem;
+  }
+
+  .beneficios__grid,
+  .testimonios__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .admin {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -664,6 +805,29 @@ textarea {
 .admin__productos-grid {
   display: grid;
   gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.admin__inicio {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.admin__dashboard {
+  display: grid;
+  gap: 2rem;
+}
+
+.admin__leads,
+.admin__productos {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Admin enhancements */
+.admin__panel.oculto {
+  display: none;
 }
 
 .checkout {

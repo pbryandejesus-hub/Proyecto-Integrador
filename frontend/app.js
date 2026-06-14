@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8000/api";
+const API_BASE = window.location.protocol === "file:" ? "http://localhost:8000/api" : "/api";
 const catalogoProductos = document.getElementById("catalogoProductos");
 const formContacto = document.getElementById("formContacto");
 const contactResponse = document.getElementById("contactResponse");
@@ -24,9 +24,9 @@ const SAMPLE_PRODUCTS = [
     id: 1,
     name: "Remera Terracota",
     category: "Camiseta",
-    description: "Remera suave con corte moderno y estampado minimalista.",
+    description: "Remera suave con corte moderno y estampado minimalista. Perfecta para looks casuales y urbanos.",
     price: "$45.990",
-    image_path: "assets/images/productos/remera_01.webp",
+    image_path: "assets/images/productos/remera_01.svg",
     sizes: ["S", "M", "L"],
     colors: ["Terracota", "Negro", "Beige"],
     stock: 18,
@@ -35,9 +35,9 @@ const SAMPLE_PRODUCTS = [
     id: 2,
     name: "Saco Ejecutivo",
     category: "Saco",
-    description: "Saco semi-formal con forro cómodo y acabado premium.",
+    description: "Saco semi-formal con forro cómodo y acabado premium. Ideal para looks sofisticados.",
     price: "$89.990",
-    image_path: "assets/images/productos/saco_01.webp",
+    image_path: "assets/images/productos/saco_01.svg",
     sizes: ["S", "M", "L"],
     colors: ["Azul Marino", "Gris", "Negro"],
     stock: 12,
@@ -46,12 +46,23 @@ const SAMPLE_PRODUCTS = [
     id: 3,
     name: "Pantalón Chino",
     category: "Pantalón",
-    description: "Pantalón chino de corte ajustado, ideal para looks casuales o formales.",
+    description: "Pantalón chino de corte ajustado, ideal para looks casuales o formales. Versátil y cómodo.",
     price: "$59.990",
-    image_path: "assets/images/productos/pantalon_01.webp",
+    image_path: "assets/images/productos/pantalon_01.svg",
     sizes: ["S", "M", "L"],
     colors: ["Verde Oliva", "Beige", "Negro"],
     stock: 20,
+  },
+  {
+    id: 4,
+    name: "Hoodie Negro",
+    category: "Sudadera",
+    description: "Hoodie cómodo con bolsillo frontal tipo canguro. Perfecto para días frescos.",
+    price: "$69.990",
+    image_path: "assets/images/productos/hoodie_01.svg",
+    sizes: ["S", "M", "L"],
+    colors: ["Negro", "Gris", "Azul Marino"],
+    stock: 15,
   },
 ];
 
@@ -492,4 +503,3 @@ async function init() {
 }
 
 init();
-
